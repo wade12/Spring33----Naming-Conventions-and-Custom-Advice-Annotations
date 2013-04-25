@@ -34,7 +34,8 @@ public class LoggingAspect
 	} // end method exceptionAdvice
 	
 	
-	@Around("allGetters()")
+	// @Around("allGetters()")
+	@Around("@annotation(com.osgo.aspect.Loggable)")
 	public Object myAroundAdvice(ProceedingJoinPoint proceedingJoinPoint)
 	{
 		Object returnValue = null;
@@ -59,6 +60,9 @@ public class LoggingAspect
 	public void allGetters()
 	{
 	} // end dummy method allGetters
+	
+	
+	// @Pointcut("execution(* com.osgo.service.*Service.*(..))")
 	
 	
 	@Pointcut("within(com.osgo.model.Circle)")						

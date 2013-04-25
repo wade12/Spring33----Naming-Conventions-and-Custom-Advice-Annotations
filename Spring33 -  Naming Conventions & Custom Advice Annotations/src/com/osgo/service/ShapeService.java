@@ -1,5 +1,6 @@
 package com.osgo.service;
 
+import com.osgo.aspect.Loggable;
 import com.osgo.model.Circle;
 import com.osgo.model.Triangle;
 
@@ -9,6 +10,7 @@ public class ShapeService
 	private Triangle triangle;
 	
 	
+	@Loggable
 	public Circle getCircle()
 	{
 		return circle;
